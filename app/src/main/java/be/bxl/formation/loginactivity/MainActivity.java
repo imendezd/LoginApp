@@ -10,8 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText emailEditText,pswEditText;
-    private Button loginButton, resetButton;
+    private EditText etUsername, etPassword;
+    private Button btnLogin, btnReset;
     private TextView appNameText;
 
 
@@ -20,19 +20,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        emailEditText = (EditText)findViewById(R.id.emailEditText);
-        pswEditText = (EditText)findViewById(R.id.pswEditText);
-        loginButton = (Button)findViewById(R.id.loginButton);
-        resetButton = (Button)findViewById(R.id.resetButton);
+        etUsername = (EditText)findViewById(R.id.et_main_username);
+        etPassword = (EditText)findViewById(R.id.et_main_password);
+        btnLogin = (Button)findViewById(R.id.btn_main_login);
+        btnReset = (Button)findViewById(R.id.btn_main_reset);
 
-        resetButton.setOnClickListener(new View.OnClickListener(){
+        btnReset.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                emailEditText.setText("");
-                pswEditText.setText("");
+                etUsername.setText("");
+                etPassword.setText("");
             }
         });
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast logged = Toast.makeText(getApplicationContext(), "You are logged!", Toast.LENGTH_LONG);
