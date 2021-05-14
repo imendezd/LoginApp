@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText loginEditText;
+    private EditText emailEditText,pswEditText;
     private Button loginButton, resetButton;
     private TextView appNameText;
 
@@ -20,14 +20,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        appNameText = (TextView)findViewById(R.id.appNameText);
-        loginEditText = (EditText)findViewById(R.id.loginEditText);
+        emailEditText = (EditText)findViewById(R.id.emailEditText);
+        pswEditText = (EditText)findViewById(R.id.pswEditText);
         loginButton = (Button)findViewById(R.id.loginButton);
         resetButton = (Button)findViewById(R.id.resetButton);
 
         resetButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                loginEditText.setText("");
+                emailEditText.setText("");
+                pswEditText.setText("");
             }
         });
 

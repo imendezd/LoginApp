@@ -3,4 +3,8 @@
     <string name="login_app">Login App</string>
     <string name="login">Login</string>
     <string name="reset">Reset</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="your_password">Your password</string>
+    <string name="your_username">Your username</string>
 </resources>
