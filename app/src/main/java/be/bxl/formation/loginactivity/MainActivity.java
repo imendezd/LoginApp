@@ -2,6 +2,7 @@ package be.bxl.formation.loginactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,19 +26,25 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = (Button)findViewById(R.id.btn_main_login);
         btnReset = (Button)findViewById(R.id.btn_main_reset);
 
-        btnReset.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                etUsername.setText("");
-                etPassword.setText("");
-            }
-        });
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast logged = Toast.makeText(getApplicationContext(), "You are logged!", Toast.LENGTH_LONG);
-                logged.show();
+                String username = etUsername.getText().toString();
+                String password = etPassword.getText().toString();
+
+                String messageToast;
+                if (username.equals("User") && password.equals("1234")){
+                    messageToast = String.format(getString(R.string.toast_login_welcome), username);
+                }else{
+                    messageToast = "Bad credentials";
+                }
+                Toast.makeText(getApplicationContext(), messageToast, Toast.LENGTH_LONG).show();
             }
+        });
+
+        btnReset.setOnClickListener(v -> {
+            etUsername.setText("");
+            etPassword.setText("");
         });
 
     }
